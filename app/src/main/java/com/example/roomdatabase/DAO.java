@@ -22,5 +22,6 @@ public interface DAO {
     @Query("Delete from Student where stuId =:id")
     void  deleteData(int id);
 
-
+    @Query("Select * from Student where stuId IN (:id)")
+    List<Student> getParticularData(int id);
 }

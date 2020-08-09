@@ -75,5 +75,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.btn_get).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+             List<Student> student =  myDataBase.dao().getParticularData(
+                        Integer.parseInt(et_id.getText().toString())
+                        );
+
+                for( Student item:student){
+                    Log.d("firstName<<",item.getStuFirstName());
+                    Log.d("firstName<<",""+item.getStuId());
+                }
+
+            }
+        });
     }
 }
